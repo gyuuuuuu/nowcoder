@@ -1,5 +1,7 @@
 package org.ayu.list.reverse;
 
+import java.util.Stack;
+
 public class Solution {
     public static ListNode ReverseList(ListNode head) {
         if (head == null) return null;
@@ -15,6 +17,24 @@ public class Solution {
         return pointer;
     }
 
+    public static ListNode ReverseListByStack(ListNode head) {
+        Stack<ListNode> stack = new Stack<>();
+        stack.push(head);
+        while (head.next != null) {
+            stack.push(head.next);
+            head = head.next;
+        }
+        var node = stack.pop();
+        var result = node;
+
+        while (!stack.isEmpty()) {
+            node.next = stack.pop();
+            node = node.next;
+        }
+        node.next = null;
+        return result;
+    }
+
     public static void main(String[] args) {
         ListNode listNode_1 = new ListNode(1);
         ListNode listNode_2 = new ListNode(2);
@@ -24,5 +44,6 @@ public class Solution {
         listNode_2.next = listNode_3;
 
         System.out.println(ReverseList(listNode_1));
+        System.out.println(ReverseListByStack(listNode_1));
     }
 }
