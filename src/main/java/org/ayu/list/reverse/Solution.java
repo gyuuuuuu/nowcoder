@@ -1,5 +1,7 @@
 package org.ayu.list.reverse;
 
+import org.ayu.list.ListNode;
+
 import java.util.Stack;
 
 public class Solution {

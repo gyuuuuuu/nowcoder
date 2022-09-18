@@ -1,8 +1,8 @@
-package org.ayu.list.reverse;
+package org.ayu.list;
 
 public class ListNode {
-    int value;
-    ListNode next = null;
+    public int value;
+    public ListNode next = null;
 
     public ListNode(int val) {
         this.value = val;

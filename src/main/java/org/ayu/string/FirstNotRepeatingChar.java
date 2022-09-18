@@ -1,4 +1,4 @@
-package org.ayu.string.jz;
+package org.ayu.string;
 
 
 import java.util.HashMap;
